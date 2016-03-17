@@ -1,0 +1,18 @@
+---
+title: "Tricia O’Brien 3/17/16"
+output: html_document
+---
+  I am a pre-med student and therefore, when I looked at the data I decided that I wanted to look at it in terms of health. One variable that is often compared side by side to health is GDP. Therefore, I decided that I wanted to explore the differences in GDP per continent. Although, I will not be making any health extrapolations from this data, it is just an interesting connection for me. My specific question was, what is the approximate difference between teh highest European GDP point than African? Based on my graph I conclude that the highest European countries GDP is approximatly over $25,000 than the highest African countries.
+
+
+
+
+```{r, echo=FALSE}
+df <- read.table(file="/Users/cathyobrien/myproject/data/gapminder-FiveYearData.csv", sep=',', header=T)
+#dir()
+library("ggplot2")
+ggplot(data = df, aes(x = continent, y = gdpPercap, color=continent)) + ggtitle("GDP per Continent") + 
+  geom_point(aes(size=3, alpha=.5)) + theme_bw()
+```
+
+
